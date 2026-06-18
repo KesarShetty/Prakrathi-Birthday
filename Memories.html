@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Happy Birthday Prakrathi 💖</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+overflow:hidden;
+height:100vh;
+background:
+linear-gradient(
+135deg,
+#ffb6c1,
+#ffd6e8
+);
+}
+
+/* COMMON */
+
+.page{
+
+position:absolute;
+
+top:0;
+
+left:100%;
+
+width:100%;
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+transition:1s;
+
+}
+
+.active{
+left:0;
+}
+
+.box,
+.card{
+
+background:white;
+
+padding:30px;
+
+width:90%;
+
+max-width:650px;
+
+border-radius:25px;
+
+text-align:center;
+
+box-shadow:
+0 10px 35px
+rgba(0,0,0,.2);
+
+}
+
+.photo{
+
+width:180px;
+
+height:180px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+border:6px solid pink;
+
+}
+
+.myphoto{
+
+width:240px;
+
+height:240px;
+
+border-radius:20px;
+
+object-fit:cover;
+
+border:6px solid pink;
+
+margin-bottom:15px;
+
+}
+
+h1,h2{
+color:#ff4f88;
+}
+
+p{
+
+margin-top:15px;
+
+line-height:1.8;
+
+color:#555;
+
+}
+
+button{
+
+margin-top:20px;
+
+padding:12px 30px;
+
+border:none;
+
+background:#ff4f88;
+
+color:white;
+
+border-radius:30px;
+
+cursor:pointer;
+
+}
+
+button:hover{
+
+transform:scale(1.05);
+
+}
+
+/* PAGE 3 */
+
+.page3{
+
+flex-direction:column;
+
+background:
+linear-gradient(
+135deg,
+#ffd6e8,
+#fff0f6
+);
+
+}
+
+.slider{
+
+width:350px;
+
+height:450px;
+
+background:white;
+
+padding:10px;
+
+border-radius:25px;
+
+box-shadow:
+0 10px 30px
+rgba(0,0,0,.2);
+
+}
+
+.slider img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+border-radius:20px;
+
+}
+
+/* HEARTS */
+
+.heart{
+
+position:absolute;
+
+animation:float 7s linear infinite;
+
+}
+
+@keyframes float{
+
+from{
+transform:
+translateY(
+100vh
+);
+}
+
+to{
+transform:
+translateY(
+-100px
+);
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- PAGE 1 -->
+
+<div class="page active" id="page1">
+
+<div class="box">
+
+<img
+src="c:\Users\Google\Documents\Prakrathi Main page.jpeg"
+class="photo">
+
+<h1>
+
+🎂 Happy Birthday Prakrathi 🎂
+
+</h1>
+
+<p>
+
+Dear Bestie 💖
+
+<br><br>
+
+Wishing you endless happiness,
+success and beautiful memories.
+
+Thank you for being such an amazing friend ✨
+
+</p>
+
+<button onclick="nextPage(2)">
+
+Open Surprise 🎁
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- PAGE 2 -->
+
+<div class="page" id="page2">
+
+<div class="card">
+
+<img
+src="c:\Users\Google\Documents\Message Me And Prakrathi.jpeg"
+class="myphoto">
+
+<h2>
+
+💖 A Small Message From Me 💖
+
+</h2>
+
+<p>
+
+Dear Prakrathi 🌸
+
+<br><br>
+
+Every moment with you becomes
+a beautiful memory.
+
+Your smile brings happiness.
+
+Thank you for being such
+a wonderful person ✨
+
+May your birthday bring
+success, happiness and love.
+
+Keep smiling always 💗
+
+<br><br>
+
+— From Me 🌷
+
+</p>
+
+<button
+onclick="nextPage(3)">
+
+Next ➜
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- PAGE 3 -->
+
+<div class="page page3" id="page3">
+
+<h1>
+
+📸 Our Beautiful Memories 💖
+
+</h1>
+
+<br>
+
+<div class="slider">
+
+<img
+id="slideImage"
+src="Prakrathi baby 1.jpeg">
+
+</div>
+
+<button
+onclick="nextPage(1)">
+
+🏠 Home
+
+</button>
+
+</div>
+
+
+<script>
+
+/* PAGE CHANGE */
+
+function nextPage(num){
+
+document
+.querySelectorAll(
+".page"
+)
+
+.forEach(
+p=>{
+
+p.classList
+.remove(
+"active"
+);
+
+}
+);
+
+document
+.getElementById(
+"page"+num
+)
+
+.classList
+.add(
+"active");
+
+}
+
+
+/* PHOTO SLIDER */
+
+const photos=[
+
+"Prakrathi baby 1.jpeg",
+
+"Prakrathi baby 2.jpg",
+
+"p.jpg",
+
+"P 2.jpg",
+
+"P3.jpg",
+
+"p4.jpg",
+
+
+"P and me.jpg",
+
+"P and me 2.jpg",
+
+"p and me 3.jpg",
+
+"p and me 4.jpg",
+
+"p and me 5.jpg"
+
+];
+
+let index=0;
+
+setInterval(()=>{
+
+index++;
+
+if(
+index>=
+photos.length
+){
+
+index=0;
+
+}
+
+document
+.getElementById(
+"slideImage"
+)
+
+.src=
+photos[index];
+
+},2000);
+
+
+/* FLOATING HEARTS */
+
+function createHeart(){
+
+const heart=
+document
+.createElement(
+"div"
+);
+
+heart.className=
+"heart";
+
+heart.innerHTML=
+"💖";
+
+heart.style.left=
+Math.random()*100
++"vw";
+
+heart.style.fontSize=
+20+
+Math.random()*20
++"px";
+
+document.body
+.appendChild(
+heart
+);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},7000);
+
+}
+
+setInterval(
+createHeart,
+400
+);
+
+</script>
+
+</body>
+
+</html>
